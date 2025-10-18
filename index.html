@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en" style="--font-primary: ''; --font-secondary: '';">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulse Gym — Home</title>
+  <meta name="description" content="Pulse Gym — Book a free trial class, explore classes, meet trainers, and find your nearest club." />
+  <script>
+    // Tailwind config for theme colors
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#111214',
+            secondary: '#B88A5B',
+            accent: '#FF5A00',
+            background: '#0B0B0D',
+            text: '#F5F6F7',
+            muted: '#BFC3C7',
+            card: '#0F1112'
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body { font-family: var(--font-primary), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background-color: #0B0B0D; color: #F5F6F7; }
+    :root { --safe-area-bottom: env(safe-area-inset-bottom); }
+    /* Simple focus ring that uses theme color */
+    .focus-ring:focus { box-shadow: 0 0 0 6px rgba(184,138,91,0.12); outline: none; }
+  </style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="antialiased bg-background text-text leading-normal">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[rgba(11,11,13,0.9)] to-[rgba(11,11,13,0.6)] backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 md:h-18 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <button id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden p-2 rounded-md hover:bg-white/6 focus-ring">
+            <svg class="w-6 h-6 text-text" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <span class="sr-only">Open menu</span>
+          </button>
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-accent rounded-2xl shadow-lg flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-primary"><path d="M12 2v20" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="font-semibold text-lg leading-none">Pulse Gym</span>
+          </a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+          <a href="classes.html" class="text-sm font-medium hover:text-accent transition-all duration-300">Classes</a>
+          <a href="membership.html" class="text-sm font-medium hover:text-accent transition-all duration-300">Membership</a>
+          <a href="trainers.html" class="text-sm font-medium hover:text-accent transition-all duration-300">Trainers</a>
+          <a href="locations.html" class="text-sm font-medium hover:text-accent transition-all duration-300">Locations</a>
+          <a href="contact.html" class="text-sm font-medium hover:text-accent transition-all duration-300">Contact</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+          <button class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-semibold px-3 py-1.5 rounded-full focus-ring" id="location-indicator" aria-haspopup="dialog">
+            <svg class="w-4 h-4 text-secondary" viewBox="0 0 24 24" fill="none"><path d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="#B88A5B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="text-sm">{{city}}</span>
+          </button>
+          <a href="#" class="px-6 py-3 bg-accent text-primary rounded-full font-semibold hover:scale-105 transition-transform shadow-lg focus-ring" id="primary-cta">Book Trial</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden" hidden>
+      <div class="px-4 pb-6 pt-2 space-y-3">
+        <a href="classes.html" class="block rounded-xl px-4 py-3 bg-white/3 hover:bg-white/6">Classes</a>
+        <a href="membership.html" class="block rounded-xl px-4 py-3 bg-white/3 hover:bg-white/6">Membership</a>
+        <a href="trainers.html" class="block rounded-xl px-4 py-3 bg-white/3 hover:bg-white/6">Trainers</a>
+        <a href="locations.html" class="block rounded-xl px-4 py-3 bg-white/3 hover:bg-white/6">Locations</a>
+        <a href="contact.html" class="block rounded-xl px-4 py-3 bg-white/3 hover:bg-white/6">Contact</a>
+        <a href="#" class="block text-center px-4 py-3 bg-accent rounded-full font-semibold">Book Trial</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="relative w-full overflow-hidden">
+      <!-- Background video/fallback image -->
+      <div class="absolute inset-0">
+        <video autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/photos/13811052/pexels-photo-13811052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" class="w-full h-full object-cover brightness-75">
+          <source src="https://pixabay.com/get/g6046673e71bf3c52dda5825bf8004a31f57fac406b6056ae6c820bcb64a7abb30d45970d23285da12211067dc34aa3ce0f1b842b6ce6d8a5d747834f4bea77a4_640.jpg" type="video/mp4">
+          <source src="https://images.pexels.com/photos/28781447/pexels-photo-28781447.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" type="video/webm">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/40"></div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+        <div class="max-w-2xl glass p-6 rounded-2xl bg-white/3 backdrop-blur-sm">
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Train smarter. Feel stronger. Join the pulse.</h1>
+          <p class="mt-4 text-muted text-base md:text-lg">High-energy classes, expert coaches, and flexible memberships — start with a free trial and discover your best self.</p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <button id="hero-book" class="px-8 py-3 rounded-full font-semibold bg-accent text-primary hover:scale-105 transition-transform shadow-lg focus-ring" aria-controls="booking-modal">Book Trial</button>
+            <a href="#classes-preview" class="px-8 py-3 rounded-full font-semibold border border-white/8 text-text hover:bg-white/3 transition-all">View Schedule</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-primary">1</div>
+              <div>
+                <h3 class="font-semibold">What is a session?</h3>
+                <p class="text-muted text-sm">A guided 45–60 minute class combining strength and cardio — all levels welcome.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-primary">⏱</div>
+              <div>
+                <h3 class="font-semibold">Typical length</h3>
+                <p class="text-muted text-sm">Most sessions are 45 minutes. Arrive 10 minutes early to warm up.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-primary">🎒</div>
+              <div>
+                <h3 class="font-semibold">What to bring</h3>
+                <p class="text-muted text-sm">Water bottle, towel, and athletic shoes. Lockers & showers available at most locations.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classes preview -->
+    <section id="classes-preview" class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold">Featured Classes</h2>
+          <a href="classes.html" class="text-sm text-muted hover:text-accent">View full schedule</a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Class Tile -->
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://images.pexels.com/photos/1771195/pexels-photo-1771195.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Spin class" class="rounded-xl object-cover w-full h-40" loading="lazy" />
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold">Pulse Spin</h3>
+                <p class="text-sm text-muted">45m · High</p>
+              </div>
+              <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold hover:scale-105 transition-transform" data-class="Pulse Spin">Book</button>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://images.pexels.com/photos/14099908/pexels-photo-14099908.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Strength conditioning" class="rounded-xl object-cover w-full h-40" loading="lazy" />
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold">Strength Circuit</h3>
+                <p class="text-sm text-muted">50m · Medium</p>
+              </div>
+              <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold hover:scale-105 transition-transform" data-class="Strength Circuit">Book</button>
+            </div>
+          </article>
+
+          <article class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform hover:-translate-y-1">
+            <img src="https://images.unsplash.com/photo-1542937307-e90d0cc07237?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxoaWdoJTIwaW50ZW5zaXR5JTIwaW50ZXJ2YWwlMjB0cmFpbmluZyUyMGNsYXNzfGVufDB8MHx8fDE3NjA2OTE2MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="HIIT class" class="rounded-xl object-cover w-full h-40" loading="lazy" />
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold">HIIT Blast</h3>
+                <p class="text-sm text-muted">30m · Very High</p>
+              </div>
+              <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold hover:scale-105 transition-transform" data-class="HIIT Blast">Book</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership preview -->
+    <section class="py-16 md:py-24 bg-[linear-gradient(90deg,#0F1112,#0B0B0D)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold">Memberships</h2>
+          <p class="text-muted mt-2">Simple plans so you can focus on results.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <div class="flex items-baseline gap-3">
+              <span class="text-3xl md:text-4xl font-extrabold">$0</span>
+              <span class="text-muted">Trial — One class</span>
+            </div>
+            <ul class="mt-4 text-sm text-muted space-y-2">
+              <li>One free trial class</li>
+              <li>Access to class schedule</li>
+            </ul>
+            <div class="mt-6">
+              <button class="px-8 py-3 rounded-full font-semibold bg-accent text-primary hover:scale-105 transition-transform">Start Trial</button>
+              <a href="membership.html" class="ml-4 text-sm text-muted hover:text-accent">See details</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow transform md:translate-y-4 md:scale-[1.02]">
+            <div class="flex items-baseline gap-3">
+              <span class="text-3xl md:text-4xl font-extrabold">$79</span>
+              <span class="text-muted">/mo — Unlimited classes</span>
+            </div>
+            <ul class="mt-4 text-sm text-muted space-y-2">
+              <li>Unlimited classes</li>
+              <li>Discounts on PT and retail</li>
+            </ul>
+            <div class="mt-6">
+              <a href="membership.html" class="px-8 py-3 rounded-full font-semibold bg-accent text-primary hover:scale-105 transition-transform inline-block">See details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainer preview -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold">Meet our Coaches</h2>
+          <a href="trainers.html" class="text-sm text-muted hover:text-accent">View all</a>
+        </div>
+        <div class="overflow-x-auto -mx-4 px-4 md:grid md:grid-cols-4 md:gap-6 md:overflow-visible">
+          <div class="inline-flex md:block gap-4 md:gap-0">
+            <a href="trainers.html#coach-1" class="bg-white rounded-xl shadow-lg p-4 mr-4 md:mr-0 hover:shadow-2xl transition-shadow flex items-center min-w-[260px]">
+              <img src="https://images.pexels.com/photos/8611981/pexels-photo-8611981.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Coach Anna" class="w-16 h-16 rounded-full object-cover" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-semibold">Anna R.</h4>
+                <p class="text-sm text-muted">Strength & Conditioning</p>
+              </div>
+            </a>
+
+            <a href="trainers.html#coach-2" class="bg-white rounded-xl shadow-lg p-4 mr-4 md:mr-0 hover:shadow-2xl transition-shadow flex items-center min-w-[260px]">
+              <img src="https://pixabay.com/get/g1484b332b427cc1f81e00e212907eda2f20c45107a2404c4781615bbef5f66841919be9f317c834ccd2278842e137021ab89eb6647be7ce664e2293fd701a7e5_640.jpg" alt="Coach Marcus" class="w-16 h-16 rounded-full object-cover" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-semibold">Marcus T.</h4>
+                <p class="text-sm text-muted">HIIT & Conditioning</p>
+              </div>
+            </a>
+
+            <a href="trainers.html#coach-3" class="bg-white rounded-xl shadow-lg p-4 mr-4 md:mr-0 hover:shadow-2xl transition-shadow flex items-center min-w-[260px]">
+              <img src="https://images.unsplash.com/photo-1660463527860-b66aebd362c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHxjb2FjaCUyMHBvcnRyYWl0JTIwZnJpZW5kbHl8ZW58MHwwfHx8MTc2MDY5MTYwOXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Coach Leah" class="w-16 h-16 rounded-full object-cover" loading="lazy" />
+              <div class="ml-4">
+                <h4 class="font-semibold">Leah C.</h4>
+                <p class="text-sm text-muted">Spin & Endurance</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locator preview -->
+    <section class="py-16 md:py-24 bg-[linear-gradient(90deg,#0F1112,#0B0B0D)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold">Find a club near you</h2>
+          <a href="locations.html" class="text-sm text-muted hover:text-accent">Find a location</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+          <div class="md:col-span-2">
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow flex items-center gap-4">
+              <div>
+                <h4 class="font-semibold">Nearest: Downtown Pulse</h4>
+                <p class="text-sm text-muted">0.9 mi — Open until 10pm</p>
+              </div>
+              <div class="ml-auto flex gap-3">
+                <a href="locations.html#downtown" class="px-4 py-2 rounded-full bg-accent text-primary font-semibold hover:scale-105 transition-transform">View schedule</a>
+                <a href="https://maps.google.com" class="px-4 py-2 rounded-full border border-white/8 text-muted hover:bg-white/3">Get directions</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+            <label class="block text-sm font-medium">City or ZIP</label>
+            <div class="mt-2 flex gap-2">
+              <input type="text" placeholder="Enter city or zip" class="flex-1 bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+              <button type="button" class="px-4 py-2 bg-accent text-primary rounded-xl font-semibold">Search</button>
+            </div>
+            <button type="button" id="use-location" class="mt-3 text-sm text-muted hover:text-accent">Use my location</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold">Success stories</h3>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <blockquote class="bg-white rounded-xl shadow-lg p-6">
+            <p class="text-muted">"I dropped 10 lbs and feel stronger than ever — the classes are challenging and fun."</p>
+            <cite class="block mt-3 font-semibold">— Sam R.</cite>
+          </blockquote>
+
+          <blockquote class="bg-white rounded-xl shadow-lg p-6">
+            <p class="text-muted">"Coaches push you safely and the studio vibe keeps me coming back."</p>
+            <cite class="block mt-3 font-semibold">— Nina P.</cite>
+          </blockquote>
+
+          <blockquote class="bg-white rounded-xl shadow-lg p-6">
+            <p class="text-muted">"Great facilities and easy booking — signed up for unlimited."</p>
+            <cite class="block mt-3 font-semibold">— Omar K.</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip (desktop sticky) -->
+    <div id="cta-strip" class="hidden md:flex fixed left-1/2 -translate-x-1/2 bottom-8 bg-accent text-primary px-8 py-3 rounded-full shadow-xl z-40 transition-transform duration-300">
+      <span class="font-semibold">Book Your Free Trial</span>
+      <button class="ml-4 px-4 py-2 bg-white/10 rounded-full hover:scale-105 transition-transform" id="cta-strip-btn">Book</button>
+    </div>
+
+    <!-- Mobile persistent booking CTA -->
+    <div class="md:hidden fixed inset-x-4 bottom-4 z-50">
+      <div class="bg-accent text-primary px-6 py-3 rounded-full shadow-xl flex items-center justify-between" role="button">
+        <div class="font-semibold">Book a Trial</div>
+        <button id="mobile-book" class="ml-4 px-4 py-2 bg-white/10 rounded-full">Book</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 bg-[rgba(7,7,8,0.9)] text-muted py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-semibold mb-2">Pulse Gym</h4>
+        <p class="text-sm">Contact: (555) 555-5555<br/>Mon–Sun: 6am–10pm</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="classes.html" class="hover:text-accent">Classes</a></li>
+          <li><a href="membership.html" class="hover:text-accent">Membership</a></li>
+          <li><a href="trainers.html" class="hover:text-accent">Trainers</a></li>
+          <li><a href="locations.html" class="hover:text-accent">Locations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Newsletter</h4>
+        <form class="flex gap-2">
+          <input type="email" aria-label="Email" placeholder="you@domain.com" class="flex-1 bg-white/3 border border-white/6 rounded-xl px-4 py-2 text-sm focus-ring" />
+          <button class="px-4 py-2 bg-accent rounded-xl font-semibold">Sign</button>
+        </form>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-accent">Privacy</a></li>
+          <li><a href="#" class="hover:text-accent">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center px-4 py-8" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60" data-modal-close></div>
+    <div class="relative bg-white rounded-2xl shadow-xl max-w-3xl w-full p-6">
+      <div class="flex items-start justify-between">
+        <h3 class="text-xl font-bold">Book Trial</h3>
+        <button aria-label="Close" data-modal-close class="p-2 rounded-md hover:bg-white/6 focus-ring">✕</button>
+      </div>
+      <form class="mt-4 space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Name</label>
+          <input type="text" required class="w-full bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Email</label>
+          <input type="email" required class="w-full bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-medium">Location</label>
+            <select class="w-full bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring">
+              <option>Downtown</option>
+              <option>Uptown</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Preferred time</label>
+            <input type="time" class="w-full bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+          </div>
+        </div>
+        <div class="flex items-center justify-end gap-3">
+          <button type="button" data-modal-close class="px-6 py-2 rounded-full border border-white/6">Cancel</button>
+          <button type="submit" class="px-8 py-3 rounded-full bg-accent text-primary font-semibold">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Simple interactivity: menu toggle, modal open/close, booking triggers, mobile CTA behavior
+    document.addEventListener('DOMContentLoaded', function(){
+      const mobileBtn = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const modal = document.getElementById('booking-modal');
+      const modalCloses = document.querySelectorAll('[data-modal-close]');
+      const heroBook = document.getElementById('hero-book');
+      const primaryCTA = document.getElementById('primary-cta');
+      const mobileBook = document.getElementById('mobile-book');
+      const ctaStripBtn = document.getElementById('cta-strip-btn');
+      const bookButtons = document.querySelectorAll('button[data-class], #primary-cta');
+
+      function toggleMenu(){
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', !expanded);
+        if (mobileMenu.hasAttribute('hidden')) mobileMenu.removeAttribute('hidden'); else mobileMenu.setAttribute('hidden','');
+      }
+      mobileBtn?.addEventListener('click', toggleMenu);
+
+      function openModal(){
+        modal.classList.remove('hidden');
+        modal.querySelector('[role="dialog"]')?.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal(){
+        modal.classList.add('hidden');
+        modal.querySelector('[role="dialog"]')?.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      heroBook?.addEventListener('click', openModal);
+      primaryCTA?.addEventListener('click', openModal);
+      mobileBook?.addEventListener('click', openModal);
+      ctaStripBtn?.addEventListener('click', openModal);
+      bookButtons.forEach(b=>b.addEventListener('click', openModal));
+
+      modalCloses.forEach(btn=>btn.addEventListener('click', closeModal));
+      modal.addEventListener('click', (e)=>{ if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeModal();});
+
+      // Sticky CTA show after scroll
+      const ctaStrip = document.getElementById('cta-strip');
+      let lastScroll = window.scrollY;
+      window.addEventListener('scroll', ()=>{
+        const sc = window.scrollY;
+        if (!ctaStrip) return;
+        if (sc > 300) ctaStrip.classList.remove('hidden'); else ctaStrip.classList.add('hidden');
+        lastScroll = sc;
+      });
+
+      // Use my location button
+      document.getElementById('use-location')?.addEventListener('click', ()=>{
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition((pos)=>{
+            alert('Located! Showing nearest club.');
+            // would center map / search in a real implementation
+          }, ()=>{
+            alert('Location permission denied or unavailable.');
+          });
+        } else {
+          alert('Geolocation not supported.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
