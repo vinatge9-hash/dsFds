@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en" style="--font-primary: ''; --font-secondary: '';">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulse Gym — Classes & Schedule</title>
+  <meta name="description" content="Class schedule, filters, and booking for Pulse Gym." />
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = { theme: { extend: { colors: { primary: '#111214', secondary: '#B88A5B', accent: '#FF5A00', background: '#0B0B0D', text: '#F5F6F7' } } } };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html,body{font-family:var(--font-primary),system-ui, -apple-system,'Segoe UI',Roboto,Arial;background:#0B0B0D;color:#F5F6F7}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;" class="bg-background text-text">
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[rgba(11,11,13,0.9)] to-[rgba(11,11,13,0.6)] backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold">Pulse Gym</a>
+      <nav class="hidden md:flex gap-6">
+        <a href="classes.html" class="font-medium">Classes</a>
+        <a href="membership.html" class="font-medium">Membership</a>
+        <a href="trainers.html" class="font-medium">Trainers</a>
+        <a href="locations.html" class="font-medium">Locations</a>
+      </nav>
+      <div class="hidden md:block">
+        <button class="px-6 py-3 bg-accent text-primary rounded-full font-semibold">Book Trial</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <!-- Subhero -->
+    <section class="bg-white/3 rounded-2xl p-6 mb-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold">Classes & Schedule</h1>
+          <p class="text-muted">Reserve your spot — classes fill fast.</p>
+        </div>
+        <div>
+          <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold">Book Trial</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & filters -->
+    <section class="mb-8">
+      <div class="bg-white rounded-xl p-4 shadow-lg">
+        <form id="filters" class="grid grid-cols-1 md:grid-cols-4 gap-3">
+          <input type="date" class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+          <select class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring">
+            <option>Downtown</option>
+            <option>Uptown</option>
+          </select>
+          <select class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring">
+            <option>All classes</option>
+            <option>Spin</option>
+            <option>HIIT</option>
+            <option>Strength</option>
+          </select>
+          <div class="flex gap-2">
+            <button type="button" class="px-4 py-2 bg-accent text-primary rounded-xl font-semibold">Apply</button>
+            <button type="reset" class="px-4 py-2 rounded-xl border border-white/6">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Filters column (sticky on lg) -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white rounded-xl p-4 shadow-lg sticky top-24">
+          <h3 class="font-semibold">Filters</h3>
+          <div class="mt-3 space-y-2">
+            <label class="flex items-center gap-2"><input type="checkbox" class="focus-ring" /> Show only with showers</label>
+            <label class="flex items-center gap-2"><input type="checkbox" class="focus-ring" /> PT available</label>
+            <label class="flex items-center gap-2"><input type="checkbox" class="focus-ring" /> Open now</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Schedule list -->
+      <section class="lg:col-span-3 space-y-4">
+        <!-- Example session card -->
+        <article class="bg-white rounded-xl shadow-lg p-4 flex items-center justify-between hover:shadow-2xl transition-shadow">
+          <div class="flex items-center gap-4">
+            <div class="w-20 text-center">
+              <div class="text-xl font-bold">08:00</div>
+              <div class="text-sm text-muted">AM</div>
+            </div>
+            <div>
+              <h4 class="font-semibold">HIIT Blast</h4>
+              <div class="text-sm text-muted">Coach: Marcus • 30m • Very High</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-muted">Only 2 spots left</div>
+            <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold">Book</button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl shadow-lg p-4 flex items-center justify-between hover:shadow-2xl transition-shadow">
+          <div class="flex items-center gap-4">
+            <div class="w-20 text-center">
+              <div class="text-xl font-bold">09:15</div>
+              <div class="text-sm text-muted">AM</div>
+            </div>
+            <div>
+              <h4 class="font-semibold">Strength Circuit</h4>
+              <div class="text-sm text-muted">Coach: Anna • 50m • Medium</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-muted">10 spots</div>
+            <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold">Book</button>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl shadow-lg p-4 flex items-center justify-between hover:shadow-2xl transition-shadow">
+          <div class="flex items-center gap-4">
+            <div class="w-20 text-center">
+              <div class="text-xl font-bold">12:30</div>
+              <div class="text-sm text-muted">PM</div>
+            </div>
+            <div>
+              <h4 class="font-semibold">Pulse Spin</h4>
+              <div class="text-sm text-muted">Coach: Leah • 45m • High</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-muted">5 spots</div>
+            <button class="px-6 py-2 bg-accent text-primary rounded-full font-semibold">Book</button>
+          </div>
+        </article>
+
+        <!-- Pagination / load more -->
+        <div class="text-center">
+          <button class="px-6 py-2 rounded-full border border-white/6">Load more</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Class detail modal (hidden) -->
+    <div id="class-modal" class="fixed inset-0 z-50 hidden items-center justify-center px-4 py-8">
+      <div class="absolute inset-0 bg-black/60" data-close></div>
+      <div class="relative bg-white rounded-2xl shadow-xl max-w-4xl w-full p-6">
+        <div class="flex items-start justify-between">
+          <h3 class="text-xl font-bold">Class details</h3>
+          <button data-close aria-label="Close" class="p-2 rounded-md hover:bg-white/6">✕</button>
+        </div>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p class="text-muted">Full class description goes here. Warm-up, intervals, cooldown, and equipment notes.</p>
+            <ul class="mt-4 text-sm text-muted space-y-2">
+              <li>Intensity: High</li>
+              <li>Duration: 45 minutes</li>
+              <li>Bring: Towel, water</li>
+            </ul>
+          </div>
+          <div>
+            <div class="bg-white/3 rounded-xl p-4">
+              <h4 class="font-semibold">Coach Anna</h4>
+              <p class="text-sm text-muted">Certified Strength Coach</p>
+              <div class="mt-4 flex gap-2">
+                <button class="px-4 py-2 bg-accent text-primary rounded-full">Reserve Spot</button>
+                <button class="px-4 py-2 rounded-full border border-white/6">Add to calendar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-[rgba(7,7,8,0.9)] text-muted py-8">
+    <div class="max-w-6xl mx-auto px-4">&copy; Pulse Gym</div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('button').forEach(btn=>{
+        if(btn.textContent.trim()==='Book') btn.addEventListener('click', ()=>{document.getElementById('class-modal').classList.remove('hidden');});
+      });
+      document.querySelectorAll('#class-modal [data-close]').forEach(b=>b.addEventListener('click', ()=>document.getElementById('class-modal').classList.add('hidden')));
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') document.getElementById('class-modal').classList.add('hidden'); });
+    });
+  </script>
+</body>
+</html>
