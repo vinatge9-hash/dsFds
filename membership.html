@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" style="--font-primary: ''; --font-secondary: '';">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Inter:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulse Gym — Membership</title>
+  <meta name="description" content="Membership tiers and trial signup for Pulse Gym." />
+  <script>window.tailwind = window.tailwind || {}; window.tailwind.config = { theme: { extend: { colors: { accent: '#FF5A00', secondary: '#B88A5B' } } } };</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html,body{font-family:var(--font-primary),system-ui;background:#0B0B0D;color:#F5F6F7}</style>
+</head>
+<body style="font-family: 'Poppins', sans-serif;">
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-[rgba(11,11,13,0.9)] to-[rgba(11,11,13,0.6)] backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-semibold">Pulse Gym</a>
+      <div class="hidden md:block">
+        <a href="#trial-signup" class="px-6 py-3 bg-accent text-primary rounded-full font-semibold">Start Trial</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <section class="bg-white/3 rounded-2xl p-6 mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold">Memberships that fit your life</h1>
+      <p class="text-muted mt-2">Start with a free trial — then choose a plan that matches your goals.</p>
+      <div class="mt-6">
+        <a href="#trial-signup" class="px-6 py-3 bg-accent text-primary rounded-full font-semibold">Start Free Trial</a>
+        <a href="#plans" class="ml-4 px-6 py-3 border border-white/6 rounded-full">Compare Plans</a>
+      </div>
+    </section>
+
+    <section id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+        <div class="text-sm text-muted">Trial</div>
+        <div class="mt-2 text-3xl font-extrabold">$0</div>
+        <p class="text-muted mt-2">One class to try Pulse.</p>
+        <ul class="mt-4 text-sm text-muted space-y-2">
+          <li>One free trial class</li>
+          <li>Access to schedule</li>
+        </ul>
+        <div class="mt-6">
+          <a href="#trial-signup" class="px-6 py-3 rounded-full bg-accent text-primary font-semibold">Book Trial</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl p-6 transform scale-[1.02] hover:shadow-2xl transition-shadow">
+        <div class="text-sm text-muted">Basic</div>
+        <div class="mt-2 text-3xl font-extrabold">$39<span class="text-sm text-muted">/mo</span></div>
+        <p class="text-muted mt-2">Great for occasional attendees.</p>
+        <ul class="mt-4 text-sm text-muted space-y-2">
+          <li>Access to classes (limited)</li>
+          <li>Discounted PT</li>
+        </ul>
+        <div class="mt-6">
+          <button class="px-6 py-3 rounded-full bg-accent text-primary font-semibold">Choose</button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow">
+        <div class="text-sm text-muted">Unlimited</div>
+        <div class="mt-2 text-3xl font-extrabold">$79<span class="text-sm text-muted">/mo</span></div>
+        <p class="text-muted mt-2">Unlimited classes and perks.</p>
+        <ul class="mt-4 text-sm text-muted space-y-2">
+          <li>Unlimited classes</li>
+          <li>PT discounts & guest passes</li>
+        </ul>
+        <div class="mt-6">
+          <button class="px-6 py-3 rounded-full bg-accent text-primary font-semibold">Choose</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-you-get" class="bg-white/3 rounded-xl p-6 mb-8">
+      <h3 class="font-semibold">What you get</h3>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <span class="bg-white/6 text-sm rounded-full px-3 py-2">24/7 Access</span>
+        <span class="bg-white/6 text-sm rounded-full px-3 py-2">Showers & Lockers</span>
+        <span class="bg-white/6 text-sm rounded-full px-3 py-2">Classes Included</span>
+        <span class="bg-white/6 text-sm rounded-full px-3 py-2">PT Discounts</span>
+      </div>
+    </section>
+
+    <section id="trial-signup" class="bg-white rounded-xl p-6 shadow-lg">
+      <h3 class="font-semibold">Start your trial</h3>
+      <form class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+        <input type="text" placeholder="Full name" class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+        <input type="email" placeholder="Email" class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+        <input type="tel" placeholder="Phone (optional)" class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring" />
+        <select class="bg-white/3 border border-white/6 rounded-xl px-4 py-2 focus-ring">
+          <option>Preferred location</option>
+          <option>Downtown</option>
+        </select>
+        <div class="md:col-span-2 flex gap-3 justify-end mt-2">
+          <button type="submit" class="px-8 py-3 rounded-full bg-accent text-primary font-semibold">Book Trial</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="mt-8 bg-white/3 rounded-xl p-6">
+      <h4 class="font-semibold">Payment & terms</h4>
+      <p class="text-sm text-muted mt-2">Monthly billing, cancel anytime. See full terms for details.</p>
+    </section>
+  </main>
+
+  <footer class="bg-[rgba(7,7,8,0.9)] text-muted py-8">
+    <div class="max-w-6xl mx-auto px-4">&copy; Pulse Gym</div>
+  </footer>
+</body>
+</html>
